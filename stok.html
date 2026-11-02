@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informasi Stok - Rak Pustaka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+  <header class="topbar">
+    <a class="logo" href="dashboard.html">Rak Pustaka</a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html" aria-current="page">Stok</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <div class="akun"><span id="namaUser"></span><button class="btn kecil sekunder" id="btnLogout" style="color:#fff;border-color:#fff">Keluar</button></div>
+  </header>
+  <main>
+    <section class="panel">
+      <div class="toolbar">
+        <div><h1>Informasi Stok</h1><p class="sub" style="margin:0">Data katalog buku saat ini.</p></div>
+        <input type="search" id="cari" placeholder="Cari judul, jenis, kode" aria-label="Cari buku">
+      </div>
+      <div class="tabel-wrap">
+        <table>
+          <caption class="sr-only" style="display:none">Daftar katalog buku</caption>
+          <thead><tr><th>Kode</th><th>Judul</th><th>Jenis</th><th>Edisi</th><th>Harga</th><th>Stok</th><th>Status</th><th>Aksi</th></tr></thead>
+          <tbody id="tbodyStok"></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="jTambah">
+      <h2 id="jTambah">Tambah buku baru</h2>
+      <form id="formStok" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="kode">Kode</label><input id="kode" placeholder="EKMA4999"><span class="error" id="kodeErr"></span></div>
+          <div class="field"><label for="judul">Judul</label><input id="judul"><span class="error" id="judulErr"></span></div>
+          <div class="field"><label for="jenis">Jenis</label><input id="jenis" placeholder="Buku Ajar"><span class="error" id="jenisErr"></span></div>
+          <div class="field"><label for="edisi">Edisi</label><input id="edisi" placeholder="1"><span class="error" id="edisiErr"></span></div>
+          <div class="field"><label for="harga">Harga (Rp)</label><input type="number" id="harga" min="0"><span class="error" id="hargaErr"></span></div>
+          <div class="field"><label for="stok">Stok</label><input type="number" id="stok" min="0"><span class="error" id="stokErr"></span></div>
+        </div>
+        <button type="submit" class="btn" style="margin-top:1.25rem">Tambah ke katalog</button>
+      </form>
+    </section>
+  </main>
+  <footer><p>&copy; 2026 Rak Pustaka. Tugas UTS Pemrograman Web 1.</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

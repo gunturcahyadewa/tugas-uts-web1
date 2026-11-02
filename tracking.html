@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tracking - Rak Pustaka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+  <header class="topbar">
+    <a class="logo" href="dashboard.html">Rak Pustaka</a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Stok</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html" aria-current="page">Tracking</a>
+    </nav>
+    <div class="akun"><span id="namaUser"></span><button class="btn kecil sekunder" id="btnLogout" style="color:#fff;border-color:#fff">Keluar</button></div>
+  </header>
+  <main>
+    <h1>Tracking Pengiriman</h1>
+    <section class="panel">
+      <form id="formCari" novalidate>
+        <div class="cari-baris">
+          <div class="field">
+            <label for="noDO">Nomor Delivery Order</label>
+            <input id="noDO" placeholder="Contoh: 20230012">
+            <span class="error" id="noDOErr"></span>
+          </div>
+          <button type="submit" class="btn" style="margin-top:1.75rem">Cari</button>
+        </div>
+      </form>
+    </section>
+    <section class="panel" id="hasil" aria-live="polite"><p class="kosong">Hasil pelacakan akan tampil di sini.</p></section>
+  </main>
+  <footer><p>&copy; 2026 Rak Pustaka. Tugas UTS Pemrograman Web 1.</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

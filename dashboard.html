@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Rak Pustaka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <a class="logo" href="dashboard.html">Rak Pustaka</a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html" aria-current="page">Dashboard</a>
+      <a href="stok.html">Stok</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <div class="akun"><span id="namaUser"></span><button class="btn kecil sekunder" id="btnLogout" style="color:#fff;border-color:#fff">Keluar</button></div>
+  </header>
+  <main>
+    <section class="sapaan">
+      <p class="sub" id="tanggal"></p>
+      <h1 id="greeting"></h1>
+      <p>Mau mengerjakan apa hari ini?</p>
+    </section>
+    <nav class="menu" aria-label="Menu utama">
+      <a href="stok.html"><strong>Informasi Stok</strong><span>Lihat dan kelola katalog buku</span></a>
+      <a href="tracking.html"><strong>Tracking Pengiriman</strong><span>Lacak kiriman dengan nomor DO</span></a>
+      <a href="checkout.html"><strong>Laporan Pemesanan</strong><span>Susun dan kirim pesanan buku</span></a>
+      <a href="tracking.html"><strong>History Transaksi</strong><span>Cek status pesanan yang pernah dibuat</span></a>
+    </nav>
+  </main>
+  <footer><p>&copy; 2026 Rak Pustaka. Tugas UTS Pemrograman Web 1.</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
