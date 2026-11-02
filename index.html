@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk - Toko Buku Rak Pustaka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <!-- CSS eksternal -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS internal: khusus halaman login -->
+  <style>
+    .login-form h2 { font-size: 1.8rem; }
+    .link-modal { margin-top: 1.25rem; font-size: .9rem; color: var(--abu); }
+  </style>
+</head>
+<body data-page="login">
+  <div class="login-wrap">
+    <header class="login-hero">
+      <div class="rak" aria-hidden="true">
+        <span style="height:70%;background:#e0a526"></span><span style="height:95%;background:#b4533c"></span>
+        <span style="height:60%;background:#6a8d73"></span><span style="height:85%;background:#3d5a80"></span>
+        <span style="height:75%;background:#7a4e6d"></span><span style="height:100%;background:#f1e9d0"></span>
+        <span style="height:65%;background:#e0a526"></span>
+      </div>
+      <h1>Rak Pustaka, toko buku online kampus</h1>
+      <p>Cek stok, pesan buku, dan lacak kiriman dalam satu tempat.</p>
+    </header>
+
+    <main class="login-form">
+      <section class="kotak" aria-labelledby="judulLogin">
+        <h2 id="judulLogin">Masuk ke akun</h2>
+        <!-- CSS inline pada elemen -->
+        <p class="sub" style="margin-bottom:1.5rem">Gunakan email dan password yang terdaftar.</p>
+        <form id="formLogin" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="nama@kampus.ac.id" autocomplete="email">
+            <span class="error" id="emailErr"></span>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" autocomplete="current-password">
+            <span class="error" id="passwordErr"></span>
+          </div>
+          <button type="submit" class="btn penuh">Login</button>
+        </form>
+        <div class="baris-tombol">
+          <button type="button" class="btn sekunder" id="btnLupa">Lupa Password</button>
+          <button type="button" class="btn sekunder" id="btnDaftar">Daftar</button>
+        </div>
+        <p class="petunjuk">Akun uji: <strong>rina@gmail.com</strong> / <strong>rina123</strong></p>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="modalLupa" role="dialog" aria-modal="true" aria-labelledby="jLupa">
+    <div class="modal-isi">
+      <h2 id="jLupa">Lupa password</h2>
+      <p class="sub">Masukkan email Anda. Kami kirim tautan untuk mengatur ulang password.</p>
+      <form id="formLupa" novalidate>
+        <div class="field">
+          <label for="emailLupa">Email</label>
+          <input type="email" id="emailLupa">
+          <span class="error" id="emailLupaErr"></span>
+        </div>
+        <div class="baris-tombol">
+          <button type="button" class="btn sekunder" data-tutup="modalLupa">Batal</button>
+          <button type="submit" class="btn">Kirim tautan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="modalDaftar" role="dialog" aria-modal="true" aria-labelledby="jDaftar">
+    <div class="modal-isi">
+      <h2 id="jDaftar">Buat akun baru</h2>
+      <form id="formDaftar" novalidate>
+        <div class="field">
+          <label for="namaDaftar">Nama lengkap</label>
+          <input type="text" id="namaDaftar">
+          <span class="error" id="namaDaftarErr"></span>
+        </div>
+        <div class="field">
+          <label for="emailDaftar">Email</label>
+          <input type="email" id="emailDaftar">
+          <span class="error" id="emailDaftarErr"></span>
+        </div>
+        <div class="field">
+          <label for="passDaftar">Password (min. 6 karakter)</label>
+          <input type="password" id="passDaftar">
+          <span class="error" id="passDaftarErr"></span>
+        </div>
+        <div class="baris-tombol">
+          <button type="button" class="btn sekunder" data-tutup="modalDaftar">Batal</button>
+          <button type="submit" class="btn">Daftar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
