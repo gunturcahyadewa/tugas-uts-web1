@@ -13,7 +13,7 @@ Tugas UTS Pemrograman Web 1. Aplikasi web pemesanan buku untuk toko online, dibu
 
 ## Video Penjelasan
 
-Video penjelasan proyek (maksimal 15 menit): **[[isi link YouTube di sini](https://youtu.be/j3g97ojC444]**
+Video penjelasan proyek (maksimal 15 menit): **[https://youtu.be/j3g97ojC444]**
 
 Dokumen ini mengikuti urutan penjelasan pada video, ditambah penjelasan kode tiap halaman.
 
