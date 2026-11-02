@@ -60,9 +60,7 @@ tugas-uts-web1/
 |-- assets/
 |   |-- logo.png        (opsional)
 |-- img/
-|   |-- (gambar sampul buku)
-|-- screenshots/
-    |-- (hasil tangkapan layar untuk README)
+    |-- (gambar sampul buku)
 ```
 
 Struktur mengikuti soal. Pemisahan folder menerapkan pemisahan tanggung jawab: HTML untuk struktur, CSS untuk tampilan, JavaScript untuk perilaku, dan data dipisah supaya mudah diganti tanpa menyentuh logika. Halaman login diberi nama `index.html` karena menjadi halaman pertama yang dibuka, dan halaman pemesanan diberi nama `checkout.html`.
@@ -121,26 +119,6 @@ Saat form dikirim, `preventDefault()` mencegah halaman refresh. Email dan passwo
 
 Tombol **Lupa Password** dan **Daftar** membuka modal box. Modal adalah elemen `div` yang disembunyikan dengan CSS dan ditampilkan dengan menambah class `open`. Pengguna baru dari modal Daftar ditambahkan ke array dan disimpan, sehingga dapat dipakai untuk login.
 
-Tampilan awal halaman login:
-
-![Halaman login](screenshots/01-login.png)
-
-Validasi form saat kolom kosong atau format email salah:
-
-![Validasi login](screenshots/02-login-validasi.png)
-
-Alert saat email atau password salah:
-
-![Alert login salah](screenshots/03-login-alert.png)
-
-Modal Lupa Password:
-
-![Modal lupa password](screenshots/04-modal-lupa.png)
-
-Modal Daftar:
-
-![Modal daftar](screenshots/05-modal-daftar.png)
-
 ## 7. Dashboard
 
 File: `dashboard.html`. Fungsi: `initDashboard`.
@@ -148,8 +126,6 @@ File: `dashboard.html`. Fungsi: `initDashboard`.
 Greeting dihitung dari `new Date().getHours()`: pukul 05.00 sampai 10.59 pagi, 11.00 sampai 14.59 siang, 15.00 sampai 17.59 sore, selain itu malam. Terdapat empat tombol menu sesuai soal. Karena soal meminta lima halaman, **Laporan Pemesanan** mengarah ke halaman pemesanan dan **History Transaksi** mengarah ke halaman tracking.
 
 Setiap halaman selain login memeriksa `userAktif` saat dibuka. Pengguna yang belum login diarahkan kembali ke halaman login, dan tombol Keluar menghapus data tersebut.
-
-![Dashboard](screenshots/06-dashboard.png)
 
 ## 8. Informasi Stok
 
@@ -159,22 +135,6 @@ Tabel katalog dibuat secara dinamis dari `dataKatalogBuku`, tanpa baris tabel ya
 
 Form tambah buku memvalidasi kode (wajib dan tidak boleh sama dengan yang sudah ada), judul, jenis, edisi, harga, dan stok sebelum menambahkan baris baru. Data tersimpan di `localStorage`, sehingga tidak hilang saat halaman di-refresh. Buku tanpa gambar menampilkan kotak berisi huruf pertama judul.
 
-Katalog buku dari `dataKatalogBuku`:
-
-![Katalog stok](screenshots/07-stok.png)
-
-Pencarian buku:
-
-![Pencarian stok](screenshots/08-stok-cari.png)
-
-Form tambah buku dengan pesan validasi:
-
-![Validasi tambah buku](screenshots/09-stok-validasi.png)
-
-Hasil setelah buku baru ditambahkan:
-
-![Buku baru ditambahkan](screenshots/10-stok-tambah.png)
-
 ## 9. Pemesanan
 
 File: `checkout.html`. Fungsi: `initCheckout`.
@@ -182,22 +142,6 @@ File: `checkout.html`. Fungsi: `initCheckout`.
 Halaman terdiri dari dua bagian. Bagian pertama untuk memilih buku dan jumlah. Daftar pilihan dibuat dari katalog, dan buku yang stoknya nol tidak ditampilkan. Item masuk ke array `keranjang`; tiap baris memiliki tombol **Ubah** dan **Hapus**, dan total dihitung otomatis dengan `reduce`. Jumlah yang melebihi stok ditolak dengan pesan error.
 
 Bagian kedua adalah data pemesan dan pembayaran: nama, nomor HP (divalidasi dengan regular expression), alamat (minimal 10 karakter), ekspedisi, dan metode pembayaran. Jika semua valid, program membuat nomor Delivery Order, menyimpan pesanan, dan menampilkan modal berisi nomor tersebut. Nomor itu dapat dipakai di halaman tracking.
-
-Memilih buku dan menambah item ke pesanan:
-
-![Tambah item pesanan](screenshots/11-checkout-tambah.png)
-
-Mengubah dan menghapus item, dengan total otomatis:
-
-![Ubah item pesanan](screenshots/12-checkout-ubah.png)
-
-Validasi form data pemesan dan pembayaran:
-
-![Validasi form pemesan](screenshots/13-checkout-validasi.png)
-
-Modal berisi nomor Delivery Order setelah pesanan dibuat:
-
-![Pesanan berhasil](screenshots/14-checkout-sukses.png)
 
 ## 10. Tracking Pengiriman
 
@@ -208,14 +152,6 @@ Pengguna memasukkan nomor Delivery Order lalu menekan **Cari**. Program mengambi
 Status dari data berupa teks (misalnya "Dalam Perjalanan"). Fungsi `posisi` mengubahnya menjadi tahap 0 sampai 3, lalu lebar progress bar dihitung dari tahap tersebut. Nomor yang tidak ditemukan menampilkan pesan bahwa nomor tidak ditemukan.
 
 Nomor untuk mencoba: `20230012` dan `20230013`.
-
-Hasil pencarian nomor DO:
-
-![Hasil tracking](screenshots/15-tracking-hasil.png)
-
-Nomor DO yang tidak ditemukan:
-
-![Tracking tidak ditemukan](screenshots/16-tracking-tidak-ada.png)
 
 ## 11. Penutup
 
